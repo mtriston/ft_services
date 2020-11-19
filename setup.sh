@@ -6,7 +6,7 @@
 #    By: mtriston <mtriston@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 12:04:19 by mtriston          #+#    #+#              #
-#    Updated: 2020/11/18 21:25:32 by mtriston         ###   ########.fr        #
+#    Updated: 2020/11/18 21:40:02 by mtriston         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ echo "................Building Wordpress................"
 docker build -t wordpress ./srcs/wordpress
 
 echo "................Building PhpMyAdmin................"
-docker build -t wordpress ./srcs/phpmyadmin
+docker build -t phpmyadmin ./srcs/phpmyadmin
 
 echo "................Building MySQL................"
 docker build -t mysql ./srcs/mysql
