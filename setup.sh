@@ -6,7 +6,7 @@
 #    By: mtriston <mtriston@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 12:04:19 by mtriston          #+#    #+#              #
-#    Updated: 2020/11/18 21:40:02 by mtriston         ###   ########.fr        #
+#    Updated: 2020/11/22 17:34:17 by mtriston         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,12 @@ docker build -t phpmyadmin ./srcs/phpmyadmin
 echo "................Building MySQL................"
 docker build -t mysql ./srcs/mysql
 
+echo "................Building InfluxDB................"
+docker build -t influxdb ./srcs/influxdb
+
+echo "................Building Grafana................"
+docker build -t grafana ./srcs/grafana
+
 echo "................Kubernetes Claster Creation................"
 
 echo "................Creation of Config Map (metallb)................"
@@ -49,9 +55,14 @@ kubectl apply -f nginx.yaml
 echo "................Creation of MySQL................"
 kubectl apply -f mysql.yaml
 
+echo "................Creation of PhpMyAdmin................"
+kubectl apply -f phpmyadmin.yaml
+
 echo "................Creation of WordPress................"
 kubectl apply -f wordpress.yaml
 
-echo "................Creation of WordPress................"
-kubectl apply -f phpmyadmin.yaml
+echo "................Creation of InfluxDB................"
+kubectl apply -f influxdb.yaml
 
+echo "................Creation of Grafana................"
+kubectl apply -f grafana.yaml
