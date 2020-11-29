@@ -6,7 +6,7 @@
 #    By: mtriston <mtriston@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 12:04:19 by mtriston          #+#    #+#              #
-#    Updated: 2020/11/22 17:34:17 by mtriston         ###   ########.fr        #
+#    Updated: 2020/11/25 20:58:50 by mtriston         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ echo "................Building Docker Images................"
 
 echo "................Building Nginx................"
 docker build -t nginx ./srcs/nginx
+
+echo "................Building FTPS................"
+docker build -t ftps ./srcs/ftps
 
 echo "................Building Wordpress................"
 docker build -t wordpress ./srcs/wordpress
@@ -51,6 +54,9 @@ kubectl apply -f secrets.yaml
 
 echo "................Creation of Nginx................"
 kubectl apply -f nginx.yaml
+
+echo "................Creation of FTPS................"
+kubectl apply -f ftps.yaml
 
 echo "................Creation of MySQL................"
 kubectl apply -f mysql.yaml
