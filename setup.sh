@@ -6,7 +6,7 @@
 #    By: mtriston <mtriston@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 12:04:19 by mtriston          #+#    #+#              #
-#    Updated: 2020/11/25 20:58:50 by mtriston         ###   ########.fr        #
+#    Updated: 2020/12/01 21:40:28 by mtriston         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,28 +47,28 @@ docker build -t grafana ./srcs/grafana
 echo "................Kubernetes Claster Creation................"
 
 echo "................Creation of Config Map (metallb)................"
-kubectl apply -f configMap.yaml
+kubectl apply -f ./srcs/yaml/configMap.yaml
 
 echo "................Creation of Secrets................"
-kubectl apply -f secrets.yaml
+kubectl apply -f ./srcs/yaml/secrets.yaml
 
 echo "................Creation of Nginx................"
-kubectl apply -f nginx.yaml
+kubectl apply -f ./srcs/yaml/nginx.yaml
 
 echo "................Creation of FTPS................"
-kubectl apply -f ftps.yaml
+kubectl apply -f ./srcs/yaml/ftps.yaml
 
 echo "................Creation of MySQL................"
-kubectl apply -f mysql.yaml
+kubectl apply -f ./srcs/yaml/mysql.yaml
 
 echo "................Creation of PhpMyAdmin................"
-kubectl apply -f phpmyadmin.yaml
+kubectl apply -f ./srcs/yaml/phpmyadmin.yaml
 
 echo "................Creation of WordPress................"
-kubectl apply -f wordpress.yaml
+kubectl apply -f ./srcs/yaml/wordpress.yaml
 
 echo "................Creation of InfluxDB................"
-kubectl apply -f influxdb.yaml
+kubectl apply -f ./srcs/yaml/influxdb.yaml
 
 echo "................Creation of Grafana................"
-kubectl apply -f grafana.yaml
+kubectl apply -f ./srcs/yaml/grafana.yaml

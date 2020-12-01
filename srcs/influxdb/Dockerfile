@@ -14,4 +14,6 @@ COPY /srcs/telegraf.conf    /etc/telegraf/telegraf.conf
 
 EXPOSE 8086
 
+VOLUME  ["/var/lib/influxdb"]
+
 CMD [ "sh", "start.sh" ]

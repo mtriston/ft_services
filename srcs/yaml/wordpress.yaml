@@ -61,7 +61,7 @@ spec:
         - containerPort: 5050
         volumeMounts:
         - name: wordpress-persistent-storage
-          mountPath: /www
+          mountPath: /var/www/wordpress
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
